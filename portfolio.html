@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Étudiant BTS SIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #accueil {
+            text-align: center;
+            padding-top: 100px;
+            background: #00bcd4;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #profil, #parcours, #projets, #contact {
+            background: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: justify;
+            padding: 0 20px;
+        }
+
+        .projet-item {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        form button {
+            background-color: #00bcd4;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            background-color: #019bab;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mon Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <h2>Bienvenue sur mon portfolio</h2>
+        <p>Étudiant en BTS SIO (Services Informatiques aux Organisations), je suis passionné par l'informatique et les nouvelles technologies. Découvrez mon parcours, mes projets et mes ambitions.</p>
+    </section>
+
+    <section id="profil">
+        <h2>Profil</h2>
+        <p>Je m'appelle [Votre Prénom et Nom], étudiant en deuxième année de BTS SIO avec une spécialisation en [Option SLAM ou SISR]. Je suis motivé à développer des compétences solides en programmation, gestion de systèmes, et sécurité informatique.</p>
+    </section>
+
+    <section id="parcours">
+        <h2>Parcours</h2>
+        <p>Après avoir obtenu mon baccalauréat [nom du bac], j'ai décidé de poursuivre mes études en BTS SIO pour approfondir mes connaissances en informatique. Mes stages m'ont permis de travailler sur des projets variés, notamment dans le développement web et l'administration réseau.</p>
+    </section>
+
+    <section id="projets">
+        <h2>Projets</h2>
+        <div class="projet-item">
+            <h3>Projet 1 : Application de gestion</h3>
+            <p>Développement d'une application pour gérer les stocks d'une entreprise en utilisant [technologies utilisées, ex. Java, MySQL].</p>
+        </div>
+        <div class="projet-item">
+            <h3>Projet 2 : Site web vitrine</h3>
+            <p>Création d'un site web pour une association locale en utilisant HTML, CSS, et JavaScript.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form onsubmit="return handleSubmit(event)">
+            <input type="text" name="nom" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Mon Portfolio - Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Merci pour votre message ! Je vous répondrai dès que possible.');
+        }
+    </script>
+</body>
+</html>
